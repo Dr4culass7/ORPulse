@@ -5,16 +5,15 @@
         <!-- Section header -->
         <div class="text-center mb-16">
           <div class="inline-flex items-center gap-2 rounded-full border border-blue-200 dark:border-blue-800 bg-blue-100 dark:bg-blue-900/30 px-4 py-1.5 mb-6">
-            <span class="text-sm font-medium text-blue-600 dark:text-blue-400">Get in Touch</span>
+            <span class="text-sm font-medium text-blue-600 dark:text-blue-400">{{ t.contact.badge }}</span>
           </div>
           
           <h2 class="text-4xl sm:text-5xl font-bold tracking-tight mb-6 text-gray-900 dark:text-white">
-            Let's Build Together
+            {{ t.contact.title }}
           </h2>
           
           <p class="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            Have ideas for new applications? Found a bug? Want to collaborate? 
-            We'd love to hear from you and grow the ORPulse ecosystem together.
+            {{ t.contact.description }}
           </p>
         </div>
 
@@ -36,10 +35,10 @@
                   GitHub
                 </h3>
                 <p class="text-gray-600 dark:text-gray-300 mb-3">
-                  Explore our open-source projects, report issues, or contribute to the codebase.
+                  {{ t.contact.githubDesc }}
                 </p>
                 <div class="inline-flex items-center text-blue-600 dark:text-blue-400 group-hover:text-blue-500 dark:group-hover:text-blue-300 transition-colors">
-                  <span class="text-sm font-medium">Visit Repository</span>
+                  <span class="text-sm font-medium">{{ t.contact.visitRepo }}</span>
                   <ExternalLink class="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
                 </div>
               </div>
@@ -58,7 +57,7 @@
                   Email
                 </h3>
                 <p class="text-gray-600 dark:text-gray-300 mb-3">
-                  Reach out directly for partnerships, feedback, or technical support.
+                  {{ t.contact.emailDesc }}
                 </p>
                 <div class="inline-flex items-center text-purple-600 dark:text-purple-400 group-hover:text-purple-500 dark:group-hover:text-purple-300 transition-colors">
                   <span class="text-sm font-medium">contact@orpulse.app</span>
@@ -77,10 +76,9 @@
             </div>
           </div>
           
-          <h3 class="text-2xl font-bold mb-4 text-gray-900 dark:text-white">Have a Feature Request?</h3>
+          <h3 class="text-2xl font-bold mb-4 text-gray-900 dark:text-white">{{ t.contact.featureTitle }}</h3>
           <p class="text-gray-600 dark:text-gray-300 mb-6 max-w-2xl mx-auto">
-            Your feedback drives our development. Whether it's a new application idea, 
-            feature enhancement, or improvement suggestion, we want to hear it.
+            {{ t.contact.featureDesc }}
           </p>
           
           <div class="flex flex-col sm:flex-row gap-4 justify-center">
@@ -90,7 +88,7 @@
               class="group bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/25 hover:scale-105 inline-flex items-center justify-center"
             >
               <MessageCircle class="mr-2 h-5 w-5" />
-              Submit Feedback
+              {{ t.contact.submitFeedback }}
               <ExternalLink class="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
             </a>
             
@@ -100,7 +98,7 @@
               class="group border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 px-6 py-3 font-medium rounded-lg transition-all duration-300 hover:bg-gray-50 dark:hover:bg-gray-800 inline-flex items-center justify-center"
             >
               <Code class="mr-2 h-5 w-5" />
-              View Source Code
+              {{ t.contact.viewSource }}
               <ExternalLink class="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
             </a>
           </div>
@@ -120,4 +118,7 @@ import {
   Code, 
   ExternalLink 
 } from 'lucide-vue-next'
+import { useI18n } from '../../composables/useI18n'
+
+const { t } = useI18n()
 </script>

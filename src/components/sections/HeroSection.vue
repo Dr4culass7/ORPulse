@@ -16,9 +16,8 @@
         </div>
         
         <p class="mx-auto max-w-3xl text-xl sm:text-2xl text-gray-600 dark:text-gray-300 mb-12 leading-relaxed">
-          The productivity ecosystem that adapts to your workflow. 
-          Discover powerful applications designed to enhance efficiency 
-          and streamline your professional life.
+          {{ t.hero.tagline }}
+          {{ t.hero.description }}
         </p>
         
         <!-- CTA buttons -->
@@ -27,7 +26,7 @@
             href="#applications"
             class="group bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white px-8 py-4 text-lg font-medium rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/25 hover:scale-105 inline-flex items-center justify-center"
           >
-            Explore Applications
+            {{ t.hero.exploreApps }}
             <ArrowRight class="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
           </a>
           <a 
@@ -35,7 +34,7 @@
             target="_blank"
             class="group border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 px-8 py-4 text-lg font-medium rounded-lg transition-all duration-300 hover:bg-gray-50 dark:hover:bg-gray-800 inline-flex items-center justify-center"
           >
-            Try Chronor
+            {{ t.hero.tryChronor }}
             <ExternalLink class="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
           </a>
         </div>
@@ -46,24 +45,24 @@
             <div class="h-16 w-16 rounded-xl bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center mb-4">
               <Zap class="h-8 w-8 text-blue-600 dark:text-blue-400" />
             </div>
-            <h3 class="font-semibold text-lg mb-2 text-gray-900 dark:text-white">Lightning Fast</h3>
-            <p class="text-gray-600 dark:text-gray-300 text-sm">Optimized for speed and performance</p>
+            <h3 class="font-semibold text-lg mb-2 text-gray-900 dark:text-white">{{ t.hero.lightningFast }}</h3>
+            <p class="text-gray-600 dark:text-gray-300 text-sm">{{ t.hero.lightningFastDesc }}</p>
           </div>
           
           <div class="flex flex-col items-center text-center">
             <div class="h-16 w-16 rounded-xl bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center mb-4">
               <Shield class="h-8 w-8 text-purple-600 dark:text-purple-400" />
             </div>
-            <h3 class="font-semibold text-lg mb-2 text-gray-900 dark:text-white">Secure & Private</h3>
-            <p class="text-gray-600 dark:text-gray-300 text-sm">Privacy-first design principles</p>
+            <h3 class="font-semibold text-lg mb-2 text-gray-900 dark:text-white">{{ t.hero.secure }}</h3>
+            <p class="text-gray-600 dark:text-gray-300 text-sm">{{ t.hero.secureDesc }}</p>
           </div>
           
           <div class="flex flex-col items-center text-center">
             <div class="h-16 w-16 rounded-xl bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center mb-4">
               <Sparkles class="h-8 w-8 text-blue-600 dark:text-blue-400" />
             </div>
-            <h3 class="font-semibold text-lg mb-2 text-gray-900 dark:text-white">Always Improving</h3>
-            <p class="text-gray-600 dark:text-gray-300 text-sm">Regular updates and new features</p>
+            <h3 class="font-semibold text-lg mb-2 text-gray-900 dark:text-white">{{ t.hero.modernDesign }}</h3>
+            <p class="text-gray-600 dark:text-gray-300 text-sm">{{ t.hero.modernDesignDesc }}</p>
           </div>
         </div>
       </div>
@@ -78,4 +77,7 @@
 
 <script setup lang="ts">
 import { ArrowRight, ExternalLink, Zap, Shield, Sparkles, ChevronDown } from 'lucide-vue-next'
+import { useI18n } from '../../composables/useI18n'
+
+const { t } = useI18n()
 </script>
