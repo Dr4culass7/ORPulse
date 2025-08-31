@@ -49,7 +49,7 @@
           </button>
           
           <button
-            @click="toggleTheme()"
+            @click="toggleDark()"
             class="rounded-lg p-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
             aria-label="Toggle theme"
           >
@@ -109,11 +109,11 @@
 import { ref, onMounted } from 'vue'
 import { Sun, Moon, Menu, X, Languages } from 'lucide-vue-next'
 import { useI18n } from '../../composables/useI18n'
-import { useSharedThemeToggle } from '../../composables/useSharedDark'
+import { useDark } from '../../composables/useDark'
 
 const { t, currentLanguage, setLanguage, initLanguage } = useI18n()
 
-const { isDark, toggleTheme } = useSharedThemeToggle()
+const { isDark, toggleDark } = useDark()
 
 const isMobileMenuOpen = ref(false)
 

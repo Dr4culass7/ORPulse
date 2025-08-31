@@ -100,4 +100,49 @@ const useSharedDarkBase = createSharedComposable(() =>
 - Development environment: Linux/Chrome
 
 ---
-**Status**: 🔴 Unresolved - Requires further investigation into SSR/timing/CSS specificity issues
+
+## ✅ **SOLUTION FOUND & IMPLEMENTED**
+
+### **Root Cause**
+The issue was **Tailwind CSS v4 compatibility**. The project was using Tailwind CSS v4 syntax (`@tailwindcss/postcss` and `tailwindcss: ^4.1.12`) but was configured for v3 dark mode behavior.
+
+**In Tailwind CSS v4:**
+- The `darkMode: 'class'` setting in `tailwind.config.js` is **ignored**
+- You must use `@custom-variant dark (&:where(.dark, .dark *));` in your CSS file
+- The framework changed how dark mode variants are handled
+
+### **Solution Implemented**
+
+1. **Added custom variant to `src/style.css`:**
+```css
+@import 'tailwindcss';
+
+/* CRITICAL: Enable class-based dark mode in Tailwind CSS v4 */
+@custom-variant dark (&:where(.dark, .dark *));
+```
+
+2. **Removed outdated config in `tailwind.config.js`:**
+   - Deleted `darkMode: 'class'` (not used in v4)
+
+3. **Simplified composable approach:**
+   - Created `src/composables/useDark.ts` with basic VueUse implementation
+   - Removed complex shared composable that was causing issues
+   - Added early initialization in `App.vue`
+
+4. **Updated `AppHeader.vue`:**
+   - Used simplified `useDark()` composable
+   - Changed `toggleTheme()` to `toggleDark()`
+
+### **Files Modified in Solution**
+- `src/style.css` - Added critical `@custom-variant` directive
+- `tailwind.config.js` - Removed outdated `darkMode: 'class'`
+- `src/composables/useDark.ts` - New simplified composable
+- `src/App.vue` - Early dark mode initialization
+- `src/components/layout/AppHeader.vue` - Updated to use new composable
+- `src/composables/useSharedDark.ts` - **Deleted** (was causing issues)
+
+### **Result**
+🎉 **Dark mode now works correctly** across the entire application!
+
+---
+**Status**: ✅ **RESOLVED** - Tailwind CSS v4 compatibility issue fixed

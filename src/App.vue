@@ -33,6 +33,10 @@ import FeaturesSection from './components/sections/FeaturesSection.vue'
 import ContactSection from './components/sections/ContactSection.vue'
 import LoadingSpinner from './components/ui/LoadingSpinner.vue'
 import NotFound from './components/NotFound.vue'
+import { useDark } from './composables/useDark'
+
+// Initialize dark mode early
+const { isDark } = useDark()
 
 const isInitialLoading = ref(true)
 const currentHash = ref(window.location.hash)
