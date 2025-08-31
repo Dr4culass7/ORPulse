@@ -16,31 +16,40 @@
             href="#about" 
             class="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
           >
-            About
+            {{ t.nav.about }}
           </a>
           <a 
             href="#applications" 
             class="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
           >
-            Applications
+            {{ t.nav.applications }}
           </a>
           <a 
             href="#features" 
             class="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
           >
-            Features
+            {{ t.nav.features }}
           </a>
           <a 
             href="#contact" 
             class="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
           >
-            Contact
+            {{ t.nav.contact }}
           </a>
         </nav>
 
-        <div class="flex items-center space-x-4">
+        <div class="flex items-center space-x-2">
           <button
-            @click="toggleTheme"
+            @click="toggleLanguage"
+            class="rounded-lg px-3 py-2 text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors flex items-center gap-1"
+            aria-label="Toggle language"
+          >
+            <Languages class="h-4 w-4" />
+            <span>{{ currentLanguage.toUpperCase() }}</span>
+          </button>
+          
+          <button
+            @click="toggleTheme()"
             class="rounded-lg p-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
             aria-label="Toggle theme"
           >
@@ -67,28 +76,28 @@
             @click="closeMobileMenu"
             class="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
           >
-            About
+            {{ t.nav.about }}
           </a>
           <a 
             href="#applications" 
             @click="closeMobileMenu"
             class="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
           >
-            Applications
+            {{ t.nav.applications }}
           </a>
           <a 
             href="#features" 
             @click="closeMobileMenu"
             class="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
           >
-            Features
+            {{ t.nav.features }}
           </a>
           <a 
             href="#contact" 
             @click="closeMobileMenu"
             class="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
           >
-            Contact
+            {{ t.nav.contact }}
           </a>
         </nav>
       </div>
@@ -98,21 +107,15 @@
 
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
-import { Sun, Moon, Menu, X } from 'lucide-vue-next'
+import { Sun, Moon, Menu, X, Languages } from 'lucide-vue-next'
+import { useI18n } from '../../composables/useI18n'
+import { useSharedThemeToggle } from '../../composables/useSharedDark'
 
-const isDark = ref(false)
+const { t, currentLanguage, setLanguage, initLanguage } = useI18n()
+
+const { isDark, toggleTheme } = useSharedThemeToggle()
+
 const isMobileMenuOpen = ref(false)
-
-const toggleTheme = () => {
-  isDark.value = !isDark.value
-  if (isDark.value) {
-    document.documentElement.classList.add('dark')
-    localStorage.setItem('theme', 'dark')
-  } else {
-    document.documentElement.classList.remove('dark')
-    localStorage.setItem('theme', 'light')
-  }
-}
 
 const toggleMobileMenu = () => {
   isMobileMenuOpen.value = !isMobileMenuOpen.value
@@ -122,13 +125,11 @@ const closeMobileMenu = () => {
   isMobileMenuOpen.value = false
 }
 
+const toggleLanguage = () => {
+  setLanguage(currentLanguage.value === 'en' ? 'fr' : 'en')
+}
+
 onMounted(() => {
-  const savedTheme = localStorage.getItem('theme')
-  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
-  
-  if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
-    isDark.value = true
-    document.documentElement.classList.add('dark')
-  }
+  initLanguage()
 })
 </script>
