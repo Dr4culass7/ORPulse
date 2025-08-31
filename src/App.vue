@@ -19,6 +19,9 @@
       
       <AppFooter />
     </div>
+    
+    <!-- Back to Top Button -->
+    <BackToTop />
   </div>
 </template>
 
@@ -32,6 +35,7 @@ import ApplicationsSection from './components/sections/ApplicationsSection.vue'
 import FeaturesSection from './components/sections/FeaturesSection.vue'
 import ContactSection from './components/sections/ContactSection.vue'
 import LoadingSpinner from './components/ui/LoadingSpinner.vue'
+import BackToTop from './components/ui/BackToTop.vue'
 import NotFound from './components/NotFound.vue'
 import { useDark } from './composables/useDark'
 
