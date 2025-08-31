@@ -40,7 +40,7 @@ import NotFound from './components/NotFound.vue'
 import { useDark } from './composables/useDark'
 
 // Initialize dark mode early
-const { isDark } = useDark()
+useDark()
 
 const isInitialLoading = ref(true)
 const currentHash = ref(window.location.hash)
