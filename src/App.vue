@@ -57,7 +57,7 @@ const handleNavigateHome = () => {
 onMounted(() => {
   setTimeout(() => {
     isInitialLoading.value = false
-  }, 1000)
+  }, 300)
   
   window.addEventListener('hashchange', handleHashChange)
 })
