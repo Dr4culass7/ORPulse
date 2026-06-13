@@ -1,5 +1,5 @@
 <template>
-  <footer class="border-t border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900">
+  <footer class="border-t border-gray-250/30 dark:border-gray-800/80 bg-white dark:bg-gray-950 transition-colors duration-300">
     <div class="container mx-auto px-4 lg:px-8 py-12">
       <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
         <!-- Brand -->
@@ -10,61 +10,53 @@
             </div>
             <span class="font-bold text-xl text-gray-900 dark:text-white">ORPulse</span>
           </div>
-          <p class="text-gray-600 dark:text-gray-300 max-w-md">
+          <p class="text-gray-600 dark:text-gray-400 max-w-md text-sm leading-relaxed">
             {{ t.footer.description }}
           </p>
         </div>
 
-        <!-- Applications -->
+        <!-- Ecosystem Sites -->
         <div>
-          <h4 class="font-semibold text-gray-900 dark:text-white mb-4">{{ t.footer.applications }}</h4>
-          <ul class="space-y-2">
+          <h4 class="font-semibold text-gray-950 dark:text-white mb-4 text-sm uppercase tracking-wider">Ecosystem Projects</h4>
+          <ul class="space-y-2 text-sm">
             <li>
-              <a 
-                href="https://chronor.orpulse.app" 
-                target="_blank"
-                class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors inline-flex items-center"
+              <button 
+                @click="navigate('/')"
+                class="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
               >
-                Chronor
-                <ExternalLink class="ml-1 h-3 w-3" />
-              </a>
+                ORPulse Home
+              </button>
             </li>
             <li>
-              <span class="text-gray-500 dark:text-gray-400">TimeLogger ({{ t.footer.comingSoon }})</span>
+              <button 
+                @click="navigate('/hint-consult')"
+                class="text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors"
+              >
+                Hint Consult
+              </button>
             </li>
             <li>
-              <span class="text-gray-500 dark:text-gray-400">Project Hub ({{ t.footer.comingSoon }})</span>
+              <button 
+                @click="navigate('/caduceus')"
+                class="text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors"
+              >
+                Caduceus Agent
+              </button>
             </li>
           </ul>
         </div>
 
-        <!-- Company -->
+        <!-- Links -->
         <div>
-          <h4 class="font-semibold text-gray-900 dark:text-white mb-4">{{ t.footer.company }}</h4>
-          <ul class="space-y-2">
-            <li>
-              <a 
-                href="#about" 
-                class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
-              >
-                {{ t.footer.about }}
-              </a>
-            </li>
-            <li>
-              <a 
-                href="#contact" 
-                class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
-              >
-                {{ t.footer.contact }}
-              </a>
-            </li>
+          <h4 class="font-semibold text-gray-950 dark:text-white mb-4 text-sm uppercase tracking-wider">Resources</h4>
+          <ul class="space-y-2 text-sm">
             <li>
               <a 
                 href="https://github.com/Dr4culass7" 
                 target="_blank"
-                class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors inline-flex items-center"
+                class="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors inline-flex items-center"
               >
-                GitHub
+                GitHub Profile
                 <ExternalLink class="ml-1 h-3 w-3" />
               </a>
             </li>
@@ -72,8 +64,8 @@
         </div>
       </div>
 
-      <!-- Social Media Links -->
-      <div class="border-t border-gray-200 dark:border-gray-700 mt-8 pt-8">
+      <!-- Social Media & Copyright -->
+      <div class="border-t border-gray-150/30 dark:border-gray-850 mt-8 pt-8">
         <div class="flex items-center justify-center space-x-4 mb-6">
           <a
             v-for="social in socialLinks"
@@ -81,24 +73,24 @@
             :href="social.href"
             :target="social.href !== '#' ? '_blank' : undefined"
             :aria-label="social.label"
-            class="group relative p-2 rounded-lg text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-300"
+            class="group relative p-2 rounded-lg text-gray-500 dark:text-gray-450 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-850 transition-all duration-300"
             :title="social.href === '#' ? 'Coming Soon' : social.label"
           >
             <component :is="social.icon" class="h-5 w-5" />
             <span 
               v-if="social.href === '#'" 
-              class="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-gray-900 dark:bg-gray-700 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none"
+              class="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-gray-900 dark:bg-gray-700 text-white text-[10px] px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none"
             >
               Coming Soon
             </span>
           </a>
         </div>
         
-        <div class="flex flex-col sm:flex-row justify-between items-center">
-          <p class="text-gray-600 dark:text-gray-300 text-sm">
+        <div class="flex flex-col sm:flex-row justify-between items-center text-xs text-gray-500 dark:text-gray-450">
+          <p>
             © {{ currentYear }} ORPulse. {{ t.footer.rights }}
           </p>
-          <p class="text-gray-600 dark:text-gray-300 text-sm mt-2 sm:mt-0">
+          <p class="mt-2 sm:mt-0">
             {{ t.footer.builtWith }}
           </p>
         </div>
@@ -111,8 +103,10 @@
 import { computed } from 'vue'
 import { ExternalLink, Twitter, Linkedin, Github, Instagram, Facebook } from 'lucide-vue-next'
 import { useI18n } from '../../composables/useI18n'
+import { useRouter } from '../../composables/useRouter'
 
 const { t } = useI18n()
+const { navigate } = useRouter()
 const currentYear = computed(() => new Date().getFullYear())
 
 const socialLinks = [
