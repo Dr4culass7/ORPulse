@@ -4,9 +4,10 @@ A modern, responsive landing page for the ORPulse productivity ecosystem built w
 
 ## 🚀 Features
 
-- **Modern Tech Stack**: Vue 3 + TypeScript + Vite + Tailwind CSS
+- **Modern Tech Stack**: Vue 3 + TypeScript + Vite + Tailwind CSS (v4)
 - **Responsive Design**: Mobile-first approach with perfect cross-device experience
-- **Dark/Light Mode**: Theme toggle with persistent user preference
+- **Premium Glassmorphic Dark UI**: High-tech neon glassmorphism aesthetic matching Caduceus and Hint Consult
+- **Multi-Language Support**: Interconnected translations for English, French, and Dutch (EN default)
 - **Fast Performance**: Optimized build with code splitting and compression
 - **SEO Friendly**: Proper meta tags and semantic HTML
 - **Docker Ready**: Multi-stage Docker build for easy deployment
