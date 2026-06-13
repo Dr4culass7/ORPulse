@@ -1,18 +1,21 @@
 @import 'tailwindcss';
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
-
-/* CRITICAL: Enable class-based dark mode in Tailwind CSS v4 */
-@custom-variant dark (&:where(.dark, .dark *));
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap');
 
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Outfit', sans-serif;
+  background-color: #04040a;
+  color: #f8fafc;
 }
 
-/* Fade up animation */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+/* Custom fade animations */
 .fade-up-enter-active,
 .fade-up-leave-active {
   transition: all 0.5s ease;
@@ -28,7 +31,6 @@ body {
   opacity: 0;
 }
 
-/* Fade animation */
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.3s ease;
@@ -39,7 +41,6 @@ body {
   opacity: 0;
 }
 
-/* Page load animation */
 @keyframes pageLoad {
   from {
     opacity: 0;
@@ -55,41 +56,43 @@ body {
   animation: pageLoad 0.6s ease-out;
 }
 
-/* Custom Mesh Backgrounds for Professional Look */
-.bg-mesh-orpulse {
-  background-image: 
-    radial-gradient(circle at 10% 20%, rgba(59, 130, 246, 0.06) 0%, transparent 45%),
-    radial-gradient(circle at 90% 85%, rgba(139, 92, 246, 0.06) 0%, transparent 45%);
-}
-
-.bg-mesh-hint {
-  background-image: 
-    radial-gradient(circle at 15% 15%, rgba(16, 185, 129, 0.06) 0%, transparent 40%),
-    radial-gradient(circle at 85% 85%, rgba(59, 130, 246, 0.05) 0%, transparent 40%);
-}
-
-.bg-mesh-caduceus {
-  background-image: 
-    radial-gradient(circle at 10% 20%, rgba(6, 182, 212, 0.07) 0%, transparent 40%),
-    radial-gradient(circle at 90% 80%, rgba(217, 70, 239, 0.05) 0%, transparent 45%);
-}
-
 /* Glassmorphism Cards */
 .glass-panel {
-  background: rgba(255, 255, 255, 0.45);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(0, 0, 0, 0.06);
-}
-
-.dark .glass-panel {
-  background: rgba(15, 23, 42, 0.45);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: rgba(15, 15, 30, 0.45);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .glass-panel:hover {
-  border-color: rgba(59, 130, 246, 0.2);
-  box-shadow: 0 10px 30px -10px rgba(59, 130, 246, 0.1);
+  border-color: rgba(255, 255, 255, 0.18);
+  box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.7);
+}
+
+/* Glowing Background Orbs */
+.glow-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.55;
+}
+
+.orb-blue {
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.22) 0%, transparent 70%);
+}
+
+.orb-purple {
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.18) 0%, transparent 70%);
+}
+
+.orb-emerald {
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.22) 0%, transparent 70%);
+}
+
+.orb-cyan {
+  background: radial-gradient(circle, rgba(6, 182, 212, 0.22) 0%, transparent 70%);
 }

@@ -1,18 +1,18 @@
 <template>
-  <section id="contact" class="py-24 lg:py-32 bg-white dark:bg-gray-900">
+  <section id="contact" class="py-24 lg:py-32 bg-transparent border-b border-white/5">
     <div class="container mx-auto px-4 lg:px-8">
       <div class="mx-auto max-w-4xl">
         <!-- Section header -->
         <div class="text-center mb-16">
-          <div class="inline-flex items-center gap-2 rounded-full border border-blue-200 dark:border-blue-800 bg-blue-100 dark:bg-blue-900/30 px-4 py-1.5 mb-6">
-            <span class="text-sm font-medium text-blue-600 dark:text-blue-400">{{ t.contact.badge }}</span>
+          <div class="inline-flex items-center gap-2 rounded-full border border-blue-500/30 bg-blue-500/10 px-4 py-1.5 mb-6">
+            <span class="text-sm font-medium text-blue-400">{{ t.contact.badge }}</span>
           </div>
           
-          <h2 class="text-4xl sm:text-5xl font-bold tracking-tight mb-6 text-gray-900 dark:text-white">
+          <h2 class="text-4xl sm:text-5xl font-bold tracking-tight mb-6 text-white font-heading">
             {{ t.contact.title }}
           </h2>
           
-          <p class="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          <p class="text-xl text-slate-350 max-w-2xl mx-auto leading-relaxed">
             {{ t.contact.description }}
           </p>
         </div>
@@ -23,21 +23,21 @@
           <a 
             href="https://github.com/Dr4culass7"
             target="_blank"
-            class="group relative overflow-hidden rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-8 transition-all duration-300 hover:border-blue-300 dark:hover:border-blue-600 hover:shadow-lg hover:-translate-y-1"
+            class="group relative overflow-hidden rounded-2xl border border-white/5 bg-[#0f0f1e]/20 p-8 transition-all duration-300 hover:border-blue-500/40 hover:-translate-y-1 glass-panel"
           >
             <div class="flex items-start gap-4">
-              <div class="flex h-14 w-14 items-center justify-center rounded-xl bg-gray-100 dark:bg-gray-700 group-hover:bg-blue-100 dark:group-hover:bg-blue-900/30 transition-colors duration-300">
-                <Github class="h-7 w-7 text-gray-600 dark:text-gray-300 group-hover:text-blue-600 dark:group-hover:text-blue-400" />
+              <div class="flex h-14 w-14 items-center justify-center rounded-xl bg-white/5 group-hover:bg-blue-500/10 transition-colors duration-300">
+                <Github class="h-7 w-7 text-slate-300 group-hover:text-blue-400" />
               </div>
               
               <div class="flex-1">
-                <h3 class="text-xl font-bold mb-2 text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
+                <h3 class="text-xl font-bold mb-2 text-white group-hover:text-blue-400 transition-colors duration-300 font-heading">
                   GitHub
                 </h3>
-                <p class="text-gray-600 dark:text-gray-300 mb-3">
+                <p class="text-slate-400 mb-3 text-sm leading-relaxed">
                   {{ t.contact.githubDesc }}
                 </p>
-                <div class="inline-flex items-center text-blue-600 dark:text-blue-400 group-hover:text-blue-500 dark:group-hover:text-blue-300 transition-colors">
+                <div class="inline-flex items-center text-blue-400 group-hover:text-blue-300 transition-colors">
                   <span class="text-sm font-medium">{{ t.contact.visitRepo }}</span>
                   <ExternalLink class="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
                 </div>
@@ -46,20 +46,20 @@
           </a>
 
           <!-- Email -->
-          <div class="group relative overflow-hidden rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-8 transition-all duration-300 hover:border-purple-300 dark:hover:border-purple-600 hover:shadow-lg hover:-translate-y-1">
+          <div class="group relative overflow-hidden rounded-2xl border border-white/5 bg-[#0f0f1e]/20 p-8 transition-all duration-300 hover:border-indigo-500/40 hover:-translate-y-1 glass-panel">
             <div class="flex items-start gap-4">
-              <div class="flex h-14 w-14 items-center justify-center rounded-xl bg-gray-100 dark:bg-gray-700 group-hover:bg-purple-100 dark:group-hover:bg-purple-900/30 transition-colors duration-300">
-                <Mail class="h-7 w-7 text-gray-600 dark:text-gray-300 group-hover:text-purple-600 dark:group-hover:text-purple-400" />
+              <div class="flex h-14 w-14 items-center justify-center rounded-xl bg-white/5 group-hover:bg-indigo-500/10 transition-colors duration-300">
+                <Mail class="h-7 w-7 text-slate-300 group-hover:text-indigo-400" />
               </div>
               
               <div class="flex-1">
-                <h3 class="text-xl font-bold mb-2 text-gray-900 dark:text-white group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors duration-300">
+                <h3 class="text-xl font-bold mb-2 text-white group-hover:text-indigo-400 transition-colors duration-300 font-heading">
                   Email
                 </h3>
-                <p class="text-gray-600 dark:text-gray-300 mb-3">
+                <p class="text-slate-400 mb-3 text-sm leading-relaxed">
                   {{ t.contact.emailDesc }}
                 </p>
-                <div class="inline-flex items-center text-purple-600 dark:text-purple-400 group-hover:text-purple-500 dark:group-hover:text-purple-300 transition-colors">
+                <div class="inline-flex items-center text-indigo-400 group-hover:text-indigo-300 transition-colors">
                   <span class="text-sm font-medium">contact@orpulse.app</span>
                   <Copy class="ml-2 h-4 w-4" />
                 </div>
@@ -69,15 +69,15 @@
         </div>
 
         <!-- Feature request CTA -->
-        <div class="relative overflow-hidden rounded-3xl border border-gray-200 dark:border-gray-700 bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-800 dark:via-gray-800 dark:to-gray-700 p-8 text-center">
+        <div class="relative overflow-hidden rounded-3xl border border-white/10 bg-[#0f0f1e]/30 p-8 text-center glass-panel">
           <div class="flex justify-center mb-6">
-            <div class="h-16 w-16 rounded-full bg-gradient-to-br from-blue-100 to-purple-100 dark:from-blue-900/30 dark:to-purple-900/30 flex items-center justify-center">
-              <Lightbulb class="h-8 w-8 text-blue-600 dark:text-blue-400" />
+            <div class="h-16 w-16 rounded-full bg-blue-500/10 border border-blue-500/20 flex items-center justify-center">
+              <Lightbulb class="h-8 w-8 text-blue-400" />
             </div>
           </div>
           
-          <h3 class="text-2xl font-bold mb-4 text-gray-900 dark:text-white">{{ t.contact.featureTitle }}</h3>
-          <p class="text-gray-600 dark:text-gray-300 mb-6 max-w-2xl mx-auto">
+          <h3 class="text-2xl font-bold mb-4 text-white font-heading">{{ t.contact.featureTitle }}</h3>
+          <p class="text-slate-400 mb-6 max-w-2xl mx-auto leading-relaxed">
             {{ t.contact.featureDesc }}
           </p>
           
@@ -85,7 +85,7 @@
             <a 
               href="https://github.com/Dr4culass7/ORPulse/issues"
               target="_blank"
-              class="group bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/25 hover:scale-105 inline-flex items-center justify-center"
+              class="group bg-gradient-to-r from-blue-500 to-indigo-500 hover:from-blue-600 hover:to-indigo-600 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 shadow-[0_0_15px_rgba(99,102,241,0.25)] hover:shadow-[0_0_25px_rgba(99,102,241,0.45)] hover:scale-105 inline-flex items-center justify-center"
             >
               <MessageCircle class="mr-2 h-5 w-5" />
               {{ t.contact.submitFeedback }}
@@ -95,7 +95,7 @@
             <a 
               href="https://github.com/Dr4culass7"
               target="_blank"
-              class="group border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 px-6 py-3 font-medium rounded-lg transition-all duration-300 hover:bg-gray-50 dark:hover:bg-gray-800 inline-flex items-center justify-center"
+              class="group border border-white/10 hover:border-white/20 bg-white/3 text-white hover:text-blue-400 px-6 py-3 font-medium rounded-lg transition-all duration-300 hover:bg-white/8 inline-flex items-center justify-center"
             >
               <Code class="mr-2 h-5 w-5" />
               {{ t.contact.viewSource }}

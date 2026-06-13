@@ -1,7 +1,7 @@
 <template>
   <div class="animate-page-load flex-1 flex flex-col">
     <AppHeader />
-    <main class="flex-1 bg-mesh-orpulse">
+    <main class="flex-1 bg-transparent">
       <HeroSection />
       <AboutSection />
       <ApplicationsSection />
