@@ -1,6 +1,6 @@
 import { ref, computed } from 'vue'
 
-export type Language = 'en' | 'fr'
+export type Language = 'en' | 'fr' | 'nl'
 
 const translations = {
   en: {
@@ -149,7 +149,7 @@ const translations = {
     // About Section
     about: {
       badge: 'À propos d\'ORPulse',
-      title: 'Productivité Redéfinie',
+      title: 'Productivity Redefined',
       description: 'ORPulse est plus qu\'une collection d\'outils—c\'est un écosystème complet conçu pour s\'intégrer parfaitement dans votre flux de travail professionnel.',
       visionTitle: 'Notre Vision',
       visionDesc: 'Nous croyons que les outils de productivité doivent être intuitifs, puissants et beaux. Chaque application de l\'écosystème ORPulse est conçue avec une attention aux détails et à l\'expérience utilisateur, garantissant que la technologie améliore plutôt que complique votre travail.',
@@ -246,6 +246,127 @@ const translations = {
       aboutUs: 'À propos d\'ORPulse',
       contactUs: 'Nous Contacter'
     }
+  },
+  nl: {
+    // Header
+    nav: {
+      about: 'Over',
+      applications: 'Applicaties',
+      features: 'Functies',
+      contact: 'Contact'
+    },
+    // Hero Section
+    hero: {
+      tagline: 'Het productiviteitsecosysteem dat zich aanpast aan uw workflow.',
+      description: 'Ontdek krachtige applicaties die zijn ontworpen om de efficiëntie te verbeteren en uw professionele leven te stroomlijnen.',
+      exploreApps: 'Ontdek Applicaties',
+      tryChronor: 'Probeer Chronor',
+      lightningFast: 'Bliksemsnel',
+      lightningFastDesc: 'Geoptimaliseerd voor snelheid en prestaties',
+      modernDesign: 'Modern Ontwerp',
+      modernDesignDesc: 'Mooie, intuïtieve interfaces',
+      secure: 'Veilig',
+      secureDesc: 'Uw gegevens, altijd beschermd'
+    },
+    // About Section
+    about: {
+      badge: 'Over ORPulse',
+      title: 'Productiviteit Hergedefinieerd',
+      description: 'ORPulse is meer dan een verzameling tools—het is een compleet ecosysteem dat naadloos integreert in uw professionele workflow.',
+      visionTitle: 'Onze Visie',
+      visionDesc: 'Wij geloven dat productiviteitstools intuïtief, krachtig en mooi moeten zijn. Elke applicatie in het ORPulse-ecosysteem is met aandacht voor detail en gebruikerservaring gemaakt, zodat technologie uw werk vergemakkelijkt in plaats van bemoeilijkt.',
+      differenceTitle: 'Wat Ons Verschillend Maakt',
+      unifiedExp: 'Eenduidige Ervaring',
+      unifiedExpDesc: 'Alle applicaties delen een consistent ontwerp en functionaliteit',
+      privacyFirst: 'Privacy Eerst',
+      privacyFirstDesc: 'Uw gegevens blijven van u, met een transparant beleid en een veilige infrastructuur',
+      innovation: 'Voortdurende Innovatie',
+      innovationDesc: 'Regelmatige updates op basis van feedback van gebruikers en nieuwe behoeften',
+      applicationsCount: 'Applicaties',
+      openSource: 'Open Source',
+      available: 'Beschikbaar'
+    },
+    // Applications Section
+    applications: {
+      badge: 'Onze Applicaties',
+      title: 'Krachtige Tools voor Elke Behoefte',
+      description: 'Ontdek onze groeiende suite van applicaties, elk ontworpen om specifieke productiviteitsuitdagingen op te lossen met elegante, moderne oplossingen.',
+      chronorDesc: 'Geavanceerd tijdbeheer met intelligente planning, taakregistratie en productiviteitsanalyses om uw workflow te optimaliseren en de efficiëntie te maximiseren.',
+      timeLoggerDesc: 'Professionele tijdregistratie-oplossing met aanwezigheidsregistratie, nalevingsrapportage en geavanceerde personeelsanalyses voor bedrijven.',
+      projectHubDesc: 'Uitgebreid projectbeheerplatform met teamsamenwerking, resourceplanning en realtime voortgangsregistratie voor organisaties.',
+      live: 'Live',
+      inDevelopment: 'In Ontwikkeling',
+      comingSoon: 'Binnenkort Beschikbaar',
+      visitChronor: 'Bezoek Chronor',
+      timeTracking: 'Tijdregistratie & Analyses',
+      intelligentScheduling: 'Intelligente Planning',
+      productivityInsights: 'Productiviteitsinzichten',
+      attendanceManagement: 'Aanwezigheidsbeheer',
+      complianceReporting: 'Nalevingsrapportage',
+      workforceAnalytics: 'Personeelsanalyses',
+      teamCollaboration: 'Teamsamenwerking',
+      resourcePlanning: 'Resourceplanning',
+      progressTracking: 'Realtime Voortgangsregistratie',
+      ctaTitle: 'Heeft u een idee voor een nieuwe applicatie?',
+      ctaDesc: 'We breiden het ORPulse-ecosysteem voortdurend uit. Deel uw ideeën en help ons de tools te bouwen die de toekomst van productiviteit vormgeven.',
+      getInTouch: 'Neem Contact Op'
+    },
+    // Features Section
+    features: {
+      title: 'Waarom Kiezen voor ORPulse',
+      description: 'Gebouwd met moderne technologie en ontworpen voor real-world productiviteitsuitdagingen',
+      lightningFast: 'Bliksemsnel',
+      lightningFastDesc: 'Geoptimaliseerde prestaties met laadtijden van minder dan een seconde en directe reacties. Gebouwd op moderne webtechnologieën voor maximale snelheid.',
+      securePrivate: 'Veilig & Privé',
+      securePrivateDesc: 'Beveiliging op enterpriseniveau met privacy-first ontwerpprincipes. Uw gegevens zijn beschermd met industriestandaard encryptie.',
+      alwaysImproving: 'Altijd Verbeterend',
+      alwaysImprovingDesc: 'Regelmatige updates en nieuwe functies op basis van feedback van gebruikers en de nieuwste technologische innovaties.',
+      crossPlatform: 'Cross-platform',
+      crossPlatformDesc: 'Native ervaring op alle apparaten en besturingssystemen met perfecte synchronisatie.',
+      beautifulDesign: 'Mooi Ontwerp',
+      beautifulDesignDesc: 'Doordacht ontworpen interfaces die functionaliteit combineren met esthetische uitmuntendheid.',
+      powerfulTools: 'Krachtige Tools',
+      powerfulToolsDesc: 'Geavanceerde functies en integraties die meegroeien met uw behoeften en workflow.',
+      uptime: 'Uptime',
+      responseTime: 'Responstijd',
+      support: 'Ondersteuning',
+      certified: 'Gecertificeerd'
+    },
+    // Contact Section
+    contact: {
+      badge: 'Neem Contact Op',
+      title: 'Laten we Samen Bouwen',
+      description: 'Heeft u ideeën voor nieuwe applicaties? Een bug gevonden? Wilt u samenwerken? We horen graag van u om het ORPulse-ecosysteem samen te laten groeien.',
+      githubDesc: 'Ontdek onze open-source projecten, rapporteer problemen of draag bij aan de codebase.',
+      visitRepo: 'Bezoek Repository',
+      emailDesc: 'Neem rechtstreeks contact op voor partnerschappen, feedback of technische ondersteuning.',
+      featureTitle: 'Heeft u een Functieverzoek?',
+      featureDesc: 'Uw feedback stimuleert onze ontwikkeling. Of het nu gaat om een nieuw applicatie-idee, een functieverbetering of een verbetersuggestie, we horen het graag.',
+      submitFeedback: 'Feedback Indienen',
+      viewSource: 'Broncode Bekijken'
+    },
+    // Footer
+    footer: {
+      description: 'Eenvoudige, krachtige tools die uw productiviteit verhogen. Gebouwd voor professionals die waarde hechten aan duidelijkheid en efficiëntie.',
+      applications: 'Applicaties',
+      company: 'Bedrijf',
+      about: 'Over',
+      contact: 'Contact',
+      comingSoon: 'Binnenkort beschikbaar',
+      rights: 'Alle rechten voorbehouden.',
+      builtWith: 'Gemaakt met ❤️ door het ORPulse-team'
+    },
+    // 404 Page
+    notFound: {
+      title: 'Pagina Niet Gevonden',
+      description: 'Oeps! De pagina die u zoekt bestaat niet. Deze is mogelijk verplaatst of verwijderd.',
+      goHome: 'Ga naar Home',
+      goBack: 'Ga Terug',
+      interested: 'U bent misschien geïnteresseerd in:',
+      ourApps: 'Onze Applicaties',
+      aboutUs: 'Over ORPulse',
+      contactUs: 'Neem Contact Met Ons Op'
+    }
   }
 }
 
@@ -264,10 +385,14 @@ export function useI18n() {
     const savedLang = localStorage.getItem('language') as Language
     const browserLang = navigator.language.substring(0, 2) as Language
     
-    if (savedLang && (savedLang === 'en' || savedLang === 'fr')) {
+    if (savedLang && (savedLang === 'en' || savedLang === 'fr' || savedLang === 'nl')) {
       currentLanguage.value = savedLang
     } else if (browserLang === 'fr') {
       currentLanguage.value = 'fr'
+    } else if (browserLang === 'nl') {
+      currentLanguage.value = 'nl'
+    } else {
+      currentLanguage.value = 'en'
     }
     
     document.documentElement.lang = currentLanguage.value

@@ -110,7 +110,13 @@ const closeMobileMenu = () => {
 }
 
 const toggleLanguage = () => {
-  setLanguage(currentLanguage.value === 'en' ? 'fr' : 'en')
+  if (currentLanguage.value === 'en') {
+    setLanguage('fr')
+  } else if (currentLanguage.value === 'fr') {
+    setLanguage('nl')
+  } else {
+    setLanguage('en')
+  }
 }
 
 onMounted(() => {
