@@ -10,7 +10,7 @@
             </div>
             <span class="font-bold text-xl text-gray-900 dark:text-white">ORPulse</span>
           </div>
-          <p class="text-gray-600 dark:text-gray-400 max-w-md text-sm leading-relaxed">
+          <p class="text-gray-600 dark:text-gray-405 max-w-md text-sm leading-relaxed">
             {{ t.footer.description }}
           </p>
         </div>
@@ -20,28 +20,28 @@
           <h4 class="font-semibold text-gray-950 dark:text-white mb-4 text-sm uppercase tracking-wider">Ecosystem Projects</h4>
           <ul class="space-y-2 text-sm">
             <li>
-              <button 
-                @click="navigate('/')"
-                class="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+              <a 
+                href="#top"
+                class="text-gray-650 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
               >
                 ORPulse Home
-              </button>
+              </a>
             </li>
             <li>
-              <button 
-                @click="navigate('/hint-consult')"
-                class="text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors"
+              <a 
+                href="https://hintconsult.orpulse.app"
+                class="text-gray-650 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors"
               >
                 Hint Consult
-              </button>
+              </a>
             </li>
             <li>
-              <button 
-                @click="navigate('/caduceus')"
-                class="text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors"
+              <a 
+                href="https://caduceus.orpulse.app"
+                class="text-gray-650 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors"
               >
                 Caduceus Agent
-              </button>
+              </a>
             </li>
           </ul>
         </div>
@@ -54,7 +54,7 @@
               <a 
                 href="https://github.com/Dr4culass7" 
                 target="_blank"
-                class="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors inline-flex items-center"
+                class="text-gray-650 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors inline-flex items-center"
               >
                 GitHub Profile
                 <ExternalLink class="ml-1 h-3 w-3" />
@@ -103,10 +103,8 @@
 import { computed } from 'vue'
 import { ExternalLink, Twitter, Linkedin, Github, Instagram, Facebook } from 'lucide-vue-next'
 import { useI18n } from '../../composables/useI18n'
-import { useRouter } from '../../composables/useRouter'
 
 const { t } = useI18n()
-const { navigate } = useRouter()
 const currentYear = computed(() => new Date().getFullYear())
 
 const socialLinks = [
